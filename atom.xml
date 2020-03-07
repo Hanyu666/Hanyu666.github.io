@@ -2,13 +2,47 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hanyu666.github.io</id>
     <title>Hanyu&apos;s web</title>
-    <updated>2020-03-06T13:52:34.366Z</updated>
+    <updated>2020-03-07T07:41:03.637Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hanyu666.github.io"/>
     <link rel="self" href="https://hanyu666.github.io/atom.xml"/>
     <logo>https://hanyu666.github.io/images/avatar.png</logo>
     <icon>https://hanyu666.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Hanyu&apos;s web</rights>
+    <entry>
+        <title type="html"><![CDATA[Keras调整学习率]]></title>
+        <id>https://hanyu666.github.io/post/bkyubj9e4/</id>
+        <link href="https://hanyu666.github.io/post/bkyubj9e4/">
+        </link>
+        <updated>2020-03-07T07:36:55.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="author">Author</h3>
+<p><a href="Hanyu666.github.io">Hanyu Mei</a><br>
+参考链接<a href="https://blog.csdn.net/zzc15806/article/details/79711114">CSDN参考链接</a></p>
+<pre><code class="language-python">keras.callbacks.ReduceLROnPlateau(monitor='val_loss', factor=0.1, patience=10, verbose=0, mode='auto', epsilon=0.0001, cooldown=0, min_lr=0)
+</code></pre>
+<pre><code class="language-python">reduce_lr = ReduceLROnPlateau(monitor='val_loss', patience=10, mode='auto')
+history = model.fit(X_train, y_train, batch_size, epochs, validation_split=2/8, callbacks=[reduce_lr],verbose=2)
+</code></pre>
+<ul>
+<li>monitor：被监测的量</li>
+<li>factor：每次减少学习率的因子，学习率将以lr = lr*factor的形式被减少</li>
+<li>patience：当patience个epoch过去而模型性能不提升时，学习率减少的动作会被触发</li>
+<li>mode：‘auto’，‘min’，‘max’之一，在min模式下，如果检测值触发学习率减少。在max模式下，当检测值不再上升则触发学习率减少。</li>
+<li>epsilon：阈值，用来确定是否进入检测值的“平原区”</li>
+<li>cooldown：学习率减少后，会经过cooldown个epoch才重新进行正常操作</li>
+<li>min_lr：学习率的下限</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[评价指标公式集合]]></title>
+        <id>https://hanyu666.github.io/post/8HvxVNVoY/</id>
+        <link href="https://hanyu666.github.io/post/8HvxVNVoY/">
+        </link>
+        <updated>2020-03-06T15:41:19.000Z</updated>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://hanyu666.github.io/post-images/1583509374312.png" alt="" loading="lazy"></figure>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[线性回归模型（或最小二乘模型）]]></title>
         <id>https://hanyu666.github.io/post/test/</id>
