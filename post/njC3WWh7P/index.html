@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>代理模型 | Hanyu&#39;s web</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://hanyu666.github.io/favicon.ico?v=1584545236076">
+<link rel="stylesheet" href="https://hanyu666.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="为了减少优化过程的计算负担，代理模型广泛应用于工程设计中。一般常见的比如径向基模型，神经网络，响应面模型，克里金模型等等。但是工程问题中又主要分为两大类:一种是带加点准则的代理模型优化，一种是直接基于实验设计的代理模型优化，下面谈谈两者的主..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://hanyu666.github.io">
+        <img src="https://hanyu666.github.io/images/avatar.png?v=1584545236076" class="site-logo">
+        <h1 class="site-title">Hanyu&#39;s web</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      
+    </div>
+    <div class="site-footer">
+       | <a class="rss" href="https://hanyu666.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">代理模型</h2>
+            <div class="post-date">2020-03-18</div>
+            
+            <div class="post-content" v-pre>
+              <p>为了减少优化过程的计算负担，代理模型广泛应用于工程设计中。一般常见的比如径向基模型，神经网络，响应面模型，克里金模型等等。但是工程问题中又主要分为两大类:一种是带加点准则的代理模型优化，一种是直接基于实验设计的代理模型优化，下面谈谈两者的主要区别。</p>
+<p>基于试验的代理模型，一般来说，主要应用于大型的复杂工程问题，比如说整车的碰撞优化这种高度非线性问题，或者无法进行尺寸参数化建模的复杂问题。它的求解思路简单，基本的求解思路就是在变量的范围内通过拉丁方抽样抽取一定数量的样本点，计算对应的响应值，根据样本点和响应值就可以构建相应的代理模型。然后根据传统的遗传算法或者说多目标优化算法添加相应约束进行优化，得到我们所需要的最优解，基于试验的代理模型优化，它存在的主要缺点就是模型精度不高，如果提高模型精度，则需要相应提高样本的数量。这样无疑增大了计算量。<br>
+另外一种就是基于加点准则的代理模型。以克里金代理模型为例，他的基本思路跟前面是一样的。也是先抽样进行实验设计。获得样本点的响应值，构建初始的模型。一般初始的模型精度都是不高的。因此需要添加新的点来提高模型进度，但是怎么添加新的点是一个很有学问的东西，目前单目标优化比较常用的是基于期望改进的加点准则，根据这个准则能够自动计算出模型需要提升的点是多少，然后将这个点带入有限元进行计算。将计算得到的值作为新的样本点加入模型进行重新构建。通过循环几次。便能够构建符合精度的代理模型，这里的精度主要指的是在全局最优解附近的精度，然后通过全局优化算法进行优化。得到我们所需要的最优解。基于加点准则的代理模型的构建。它的优点在于初始样本的需求量少。且加点效率高。能够很快得到全局最优解。但是它存在一个缺点，就是必须进行参数化建模。不然每次更新得到了点，无法自动进行有限元计算。因此目前这种算法仅适用于零部件优化。</p>
+<p>需要了解：</p>
+<ul>
+<li>贝叶斯优化</li>
+<li>贝叶斯推断</li>
+<li>贝叶斯估计（推断？）</li>
+</ul>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://hanyu666.github.io/post/AfNsCEOXM/">
+                  <h3 class="post-title">
+                    参数模型和非参数模型的理解
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>
