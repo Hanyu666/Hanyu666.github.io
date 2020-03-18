@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>Keras调整学习率 | Hanyu&#39;s web</title>
+<title>机器学习 | Hanyu&#39;s web</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,11 +18,7 @@
 
 
 
-    <meta name="description" content="Author
-Hanyu Mei
-参考链接CSDN参考链接
-keras.callbacks.ReduceLROnPlateau(monitor='val_loss', factor=0.1, patience=10, verbose=0, ..." />
-    <meta name="keywords" content="" />
+    <meta name="description" content="">
   </head>
   <body>
     <div id="app" class="main">
@@ -92,45 +88,28 @@ keras.callbacks.ReduceLROnPlateau(monitor='val_loss', factor=0.1, patience=10, v
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          <div class="post-detail">
-            <h2 class="post-title">Keras调整学习率</h2>
-            <div class="post-date">2020-03-07</div>
-            
-            <div class="post-content" v-pre>
-              <h3 id="author">Author</h3>
-<p><a href="Hanyu666.github.io">Hanyu Mei</a><br>
-参考链接<a href="https://blog.csdn.net/zzc15806/article/details/79711114">CSDN参考链接</a></p>
-<pre><code class="language-python">keras.callbacks.ReduceLROnPlateau(monitor='val_loss', factor=0.1, patience=10, verbose=0, mode='auto', epsilon=0.0001, cooldown=0, min_lr=0)
-</code></pre>
-<pre><code class="language-python">reduce_lr = ReduceLROnPlateau(monitor='val_loss', patience=10, mode='auto')
-history = model.fit(X_train, y_train, batch_size, epochs, validation_split=2/8, callbacks=[reduce_lr],verbose=2)
-</code></pre>
-<ul>
-<li>monitor：被监测的量</li>
-<li>factor：每次减少学习率的因子，学习率将以lr = lr*factor的形式被减少</li>
-<li>patience：当patience个epoch过去而模型性能不提升时，学习率减少的动作会被触发</li>
-<li>mode：‘auto’，‘min’，‘max’之一，在min模式下，如果检测值触发学习率减少。在max模式下，当检测值不再上升则触发学习率减少。</li>
-<li>epsilon：阈值，用来确定是否进入检测值的“平原区”</li>
-<li>cooldown：学习率减少后，会经过cooldown个epoch才重新进行正常操作</li>
-<li>min_lr：学习率的下限</li>
-</ul>
-
-            </div>
-            
-            
-              <div class="next-post">
-                <div class="next">下一篇</div>
-                <a href="https://hanyu666.github.io/post/8HvxVNVoY/">
-                  <h3 class="post-title">
-                    评价指标公式集合
-                  </h3>
+          <h2 class="current-tag">标签: 机器学习</h2>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://hanyu666.github.io/post/AfNsCEOXM/">
+                  <h2 class="post-title">参数模型和非参数模型的理解</h2>
                 </a>
+                <div class="post-date">
+                  2020-03-18
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
               </div>
-            
+              
+            </article>
+          
 
-            
-
-          </div>
+          <div class="pagination-container">
+  
+  
+</div>
 
         </div>
       </div>

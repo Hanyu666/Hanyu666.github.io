@@ -2,13 +2,42 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hanyu666.github.io</id>
     <title>Hanyu&apos;s web</title>
-    <updated>2020-03-07T07:41:17.679Z</updated>
+    <updated>2020-03-18T15:06:18.004Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hanyu666.github.io"/>
     <link rel="self" href="https://hanyu666.github.io/atom.xml"/>
     <logo>https://hanyu666.github.io/images/avatar.png</logo>
     <icon>https://hanyu666.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Hanyu&apos;s web</rights>
+    <entry>
+        <title type="html"><![CDATA[参数模型和非参数模型的理解]]></title>
+        <id>https://hanyu666.github.io/post/AfNsCEOXM/</id>
+        <link href="https://hanyu666.github.io/post/AfNsCEOXM/">
+        </link>
+        <updated>2020-03-18T14:46:08.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="author">Author</h3>
+<p><a href="Hanyu666.github.io">Hanyu Mei</a></p>
+<h2 id="1-通俗的理解">1 通俗的理解</h2>
+<p><strong>参数化模型（parametric model）</strong></p>
+<p>指定目标函数（或模型）的形式，比如: 线性回归指定<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>=</mo><mi>a</mi><mi>X</mi><mo>+</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">y = aX+b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span>, 逻辑回归，感知机（这里的感知机应该理解为无非线性激活函数的单个神经元的感知模型）</p>
+<p><strong>非参数模型（non-parametric model）</strong></p>
+<p>对目标函数的形式不作过多的假定和限制</p>
+<ul>
+<li>决策树</li>
+<li>朴素贝叶斯</li>
+<li>支持向量机</li>
+<li>神经网络</li>
+</ul>
+<h2 id="2-官方理解">2 官方理解</h2>
+<p><strong>参数模型</strong><br>
+假定模型符合某种分布（某种形式），这种分布由一些参数来确定。e.g., Gaussian distribution, 由均值和方差来决定。<br>
+<strong>非参数模型</strong><br>
+非参数模型不指定目标函数的形式。这并不代表模型并没有参数，反而会存在更多的参数（e.g.，NN中的weights and bias)。我们只知道该分布是存在的，却不知道这种分布到底是由哪些参数可以确定。所以模型必须通过“大量”的数据进行参数的推断。</p>
+<blockquote>
+<p>《Artificial Intelligence: A Modern Approach》：当数据多、先验少，用非参数模型；反之用参数模型。</p>
+</blockquote>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Keras调整学习率]]></title>
         <id>https://hanyu666.github.io/post/bkyubj9e4/</id>
