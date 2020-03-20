@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>标签列表 | Hanyu&#39;s web</title>
+<title>代理模型的个人理解 | Hanyu&#39;s web</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,7 +18,12 @@
 
 
 
-    <meta name="description" content="">
+    <meta name="description" content="个人理解
+
+从解决时间和资源成本的角度进行的“插值”或“拟合”研究，最后进行优化得到全局最优解
+实际上就是各种机器学习算法的应用
+两种实现思路：1，实验量的堆积。在变量范围内进行拉丁方抽样（拉丁超立方抽样），然后利用试验或数值模拟进行对应的..." />
+    <meta name="keywords" content="" />
   </head>
   <body>
     <div id="app" class="main">
@@ -88,12 +93,35 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          <h2 class="tag-list-title">标签列表</h2>
-          <div class="tags-container">
+          <div class="post-detail">
+            <h2 class="post-title">代理模型的个人理解</h2>
+            <div class="post-date">2020-03-20</div>
             
-              <a class="tag" href="https://hanyu666.github.io/tag/6yYsrbeUB/">机器学习</a>
+            <div class="post-content" v-pre>
+              <h5 id="个人理解">个人理解</h5>
+<ul>
+<li>从解决时间和资源成本的角度进行的“插值”或“拟合”研究，最后进行优化得到全局最优解</li>
+<li>实际上就是各种机器学习算法的应用</li>
+<li>两种实现思路：<strong>1</strong>，实验量的堆积。在变量范围内进行拉丁方抽样（拉丁超立方抽样），然后利用试验或数值模拟进行对应的响应计算。然后利用代理模型构建映射关系，然后基于遗传算法或多目标优化算法添加相应的约束进行优化，得到最优解。若需要高精度结果，则严重依赖实验量。<strong>2</strong>，加点准则。先抽样，再根据某种加点规则（infill criterin)，再添加采样点，再计算响应，再构建代理模型。直到得到全局最优解附近的解。最后通过全局优化算法进行优化。（关键点：最好用参数化建模，这样可以自动更新采样点的计算）。	<img src="https://img-blog.csdnimg.cn/20200319195738870.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDgxNTYzMw==,size_16,color_FFFFFF,t_70" alt="第二种构建流程" loading="lazy"></li>
+</ul>
+
+            </div>
             
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://hanyu666.github.io/post/6odr9Bn3U/">
+                  <h3 class="post-title">
+                    桥梁风工程与人工智能（综述）
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
           </div>
+
         </div>
       </div>
     </div>

@@ -1,35 +1,141 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://hanyu666.github.io</id>
-    <title>Hanyu&apos;s web</title>
-    <updated>2020-03-20T13:23:08.302Z</updated>
-    <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://hanyu666.github.io"/>
-    <link rel="self" href="https://hanyu666.github.io/atom.xml"/>
-    <logo>https://hanyu666.github.io/images/avatar.png</logo>
-    <icon>https://hanyu666.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, Hanyu&apos;s web</rights>
-    <entry>
-        <title type="html"><![CDATA[代理模型的个人理解]]></title>
-        <id>https://hanyu666.github.io/post/5_bjx4gGK/</id>
-        <link href="https://hanyu666.github.io/post/5_bjx4gGK/">
-        </link>
-        <updated>2020-03-20T13:22:26.000Z</updated>
-        <content type="html"><![CDATA[<h5 id="个人理解">个人理解</h5>
-<ul>
-<li>从解决时间和资源成本的角度进行的“插值”或“拟合”研究，最后进行优化得到全局最优解</li>
-<li>实际上就是各种机器学习算法的应用</li>
-<li>两种实现思路：<strong>1</strong>，实验量的堆积。在变量范围内进行拉丁方抽样（拉丁超立方抽样），然后利用试验或数值模拟进行对应的响应计算。然后利用代理模型构建映射关系，然后基于遗传算法或多目标优化算法添加相应的约束进行优化，得到最优解。若需要高精度结果，则严重依赖实验量。<strong>2</strong>，加点准则。先抽样，再根据某种加点规则（infill criterin)，再添加采样点，再计算响应，再构建代理模型。直到得到全局最优解附近的解。最后通过全局优化算法进行优化。（关键点：最好用参数化建模，这样可以自动更新采样点的计算）。	<img src="https://img-blog.csdnimg.cn/20200319195738870.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDgxNTYzMw==,size_16,color_FFFFFF,t_70" alt="第二种构建流程" loading="lazy"></li>
-</ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[桥梁风工程与人工智能（综述）]]></title>
-        <id>https://hanyu666.github.io/post/6odr9Bn3U/</id>
-        <link href="https://hanyu666.github.io/post/6odr9Bn3U/">
-        </link>
-        <updated>2020-03-20T13:21:18.000Z</updated>
-        <content type="html"><![CDATA[<p><ul class="markdownIt-TOC">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>桥梁风工程与人工智能（综述） | Hanyu&#39;s web</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://hanyu666.github.io/favicon.ico?v=1584710558212">
+<link rel="stylesheet" href="https://hanyu666.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="
+
+
+
+
+文献[1]
+
+主要内容：
+个人评价：
+
+
+文献[2]
+
+主要内容
+个人评价
+
+
+文献[3]（是否属于机器学习）
+*
+
+摘要
+
+
+文献[4]
+*
+
+主要内容
+评价
+
+
+文献[5]
+*
+
+摘要
+评价：
+
+
+文献[6]
+*
+
+摘要
+主要..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://hanyu666.github.io">
+        <img src="https://hanyu666.github.io/images/avatar.png?v=1584710558212" class="site-logo">
+        <h1 class="site-title">Hanyu&#39;s web</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      
+    </div>
+    <div class="site-footer">
+       | <a class="rss" href="https://hanyu666.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">桥梁风工程与人工智能（综述）</h2>
+            <div class="post-date">2020-03-20</div>
+            
+            <div class="post-content" v-pre>
+              <p><ul class="markdownIt-TOC">
 <li>
 <ul>
 <li>
@@ -165,35 +271,46 @@ c-1 5-5 9-11 9h-2L532 67 19 159h-2c-5 0-9-4-11-9l-5-22c-1-6 2-12 8-13z'/></svg><
 </li>
 </ol>
 </section>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[参数模型和非参数模型的理解]]></title>
-        <id>https://hanyu666.github.io/post/AfNsCEOXM/</id>
-        <link href="https://hanyu666.github.io/post/AfNsCEOXM/">
-        </link>
-        <updated>2020-03-18T14:46:08.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="author">Author</h3>
-<p><a href="Hanyu666.github.io">Hanyu Mei</a></p>
-<h2 id="1-通俗的理解">1 通俗的理解</h2>
-<p><strong>参数化模型（parametric model）</strong></p>
-<p>指定目标函数（或模型）的形式，比如: 线性回归指定<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>=</mo><mi>a</mi><mi>X</mi><mo>+</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">y = aX+b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span>, 逻辑回归，感知机（这里的感知机应该理解为无非线性激活函数的单个神经元的感知模型）</p>
-<p><strong>非参数模型（non-parametric model）</strong></p>
-<p>对目标函数的形式不作过多的假定和限制</p>
-<ul>
-<li>决策树</li>
-<li>朴素贝叶斯</li>
-<li>支持向量机</li>
-<li>神经网络</li>
-</ul>
-<h2 id="2-官方理解">2 官方理解</h2>
-<p><strong>参数模型</strong><br>
-假定模型符合某种分布（某种形式），这种分布由一些参数来确定。e.g., Gaussian distribution, 由均值和方差来决定。<br>
-<strong>非参数模型</strong><br>
-非参数模型不指定目标函数的形式。这并不代表模型并没有参数，反而会存在更多的参数（e.g.，NN中的weights and bias)。我们只知道该分布是存在的，却不知道这种分布到底是由哪些参数可以确定。所以模型必须通过“大量”的数据进行参数的推断。</p>
-<blockquote>
-<p>《Artificial Intelligence: A Modern Approach》：当数据多、先验少，用非参数模型；反之用参数模型。</p>
-</blockquote>
-]]></content>
-    </entry>
-</feed>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://hanyu666.github.io/post/AfNsCEOXM/">
+                  <h3 class="post-title">
+                    参数模型和非参数模型的理解
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>
